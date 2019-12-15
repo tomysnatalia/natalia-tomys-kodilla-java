@@ -11,4 +11,3 @@ public class SimpleUser {
         return username;
     }
 }
-
