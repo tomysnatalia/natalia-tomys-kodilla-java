@@ -33,18 +33,29 @@ public class CollectionTestSuite {
     public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator numbersList = new OddNumbersExterminator();
-        ArrayList<Integer> normalList = new ArrayList();
 
-        for( int number : normalList) {
-            normalList.add(number);
-            normalList.add(number+1);
-        }
+        ArrayList<Integer> normalList = new ArrayList();
+        normalList.add(1);
+        normalList.add(7);
+        normalList.add(3);
+        normalList.add(2);
+        normalList.add(6);
+        normalList.add(4);
+        normalList.add(12);
+
+        ArrayList<Integer>expectedResultList = new ArrayList<>();
+        expectedResultList.add(2);
+        expectedResultList.add(6);
+        expectedResultList.add(4);
+        expectedResultList.add(12);
+
+
         //When
         ArrayList<Integer> resultList = numbersList.exterminate(normalList);
         System.out.println("Testing normalList");
 
         //Then
-        Assert.assertEquals(normalList, resultList);
+        Assert.assertEquals(expectedResultList, resultList);
 
     }
 }
