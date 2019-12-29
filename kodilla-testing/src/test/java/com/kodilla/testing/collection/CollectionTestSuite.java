@@ -34,7 +34,7 @@ public class CollectionTestSuite {
         //Given
         OddNumbersExterminator numbersList = new OddNumbersExterminator();
 
-        ArrayList<Integer> normalList = new ArrayList();
+        ArrayList<Integer> normalList = new ArrayList<>();
         normalList.add(1);
         normalList.add(7);
         normalList.add(3);
