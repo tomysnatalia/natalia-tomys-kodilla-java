@@ -1,5 +1,4 @@
 package com.kodilla.testing.shape;
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -149,7 +148,9 @@ class ShapeCollector {
 
     public void addFigure(Shape shape) {
         Circle circle = new Circle (5);
+        Circle circle2 = new Circle (2);
         shapeCollection.add(circle);
+        shapeCollection.remove(circle2);
     }
 
     public boolean removeFigure (Shape shape){
@@ -159,6 +160,7 @@ class ShapeCollector {
             result = true;
         }
         return result;
+
     }
 
     public Shape getFigure (int n){
