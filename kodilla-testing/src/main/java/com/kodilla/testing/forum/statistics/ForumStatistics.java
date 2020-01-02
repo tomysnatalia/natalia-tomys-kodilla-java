@@ -11,15 +11,6 @@ public class ForumStatistics {
     double avgCommentsPerUser;
     double avgCommentsPerPost;
 
-    public ForumStatistics() {
-        this.users = users;
-        this.posts = posts;
-        this.comments = comments;
-        this.avgCommentsPerUser = avgCommentsPerUser;
-        this.avgPostsPerUser = avgPostsPerUser;
-        this.avgCommentsPerPost = avgCommentsPerPost;
-    }
-
     public int getUsers() {
         return users;
     }
