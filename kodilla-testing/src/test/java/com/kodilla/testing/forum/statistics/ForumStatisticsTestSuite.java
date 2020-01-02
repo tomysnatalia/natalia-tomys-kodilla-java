@@ -18,8 +18,8 @@ public class ForumStatisticsTestSuite {
             listMock.add("User");
         }
         when(statisticsMock.usersNames()).thenReturn(listMock);
-        when(statisticsMock.postsCount()).thenReturn(20);
-        when(statisticsMock.commentsCount()).thenReturn(40);
+        when(statisticsMock.postsCount()).thenReturn(50);
+        when(statisticsMock.commentsCount()).thenReturn(100);
     }
 
     @Test
@@ -95,9 +95,9 @@ public class ForumStatisticsTestSuite {
             //Then
             Assert.assertEquals(2, forumStatistics.getPosts());
             Assert.assertEquals(10, forumStatistics.getComments());
-            Assert.assertEquals(0, forumStatistics.getAvgPostsPerUser(), 0);
-            Assert.assertEquals(5, forumStatistics.getAvgCommentsPerPost(), 1);
-            Assert.assertEquals(0, forumStatistics.getAvgCommentsPerUser(), 1);
+            Assert.assertEquals(0, forumStatistics.getAvgPostsPerUser(), 0.01);
+            Assert.assertEquals(5, forumStatistics.getAvgCommentsPerPost(), 0.01);
+            Assert.assertEquals(0, forumStatistics.getAvgCommentsPerUser(), 0.01);
         }
 
         @Test
@@ -131,7 +131,7 @@ public class ForumStatisticsTestSuite {
             //Then
             Assert.assertEquals(100, forumStatistics.getUsers());
             Assert.assertEquals(0, forumStatistics.getAvgCommentsPerUser(), 0.01);
-            Assert.assertEquals(0, forumStatistics.getAvgPostsPerUser(), 1);
+            Assert.assertEquals(0, forumStatistics.getAvgPostsPerUser(), 0.01);
 
         }
     }
