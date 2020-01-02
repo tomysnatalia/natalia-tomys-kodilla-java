@@ -2,11 +2,9 @@ package com.kodilla.testing.shape;
 import org.junit.Assert;
 import org.junit.Test;
 import java.util.ArrayList;
-import org.junit.*;
 
 
 public class ShapeCollectorTestSuite {
-
 
     @Test
     public void testAddFigure() {
@@ -32,7 +30,7 @@ public class ShapeCollectorTestSuite {
         boolean result = shapeCollector.removeFigure(shape);
         //Then
         Assert.assertTrue(result);
-        Assert.assertEquals( 0, shapeCollector.getShapeCollection());
+        Assert.assertEquals( 0, shapeCollector.getShapeCollection().size());
     }
 
     @Test
@@ -57,7 +55,6 @@ public class ShapeCollectorTestSuite {
         // When
         ArrayList<Shape> shapeResultList = shapeCollector.getShapeCollection();
         Assert.assertEquals(shapeList.toString(), shapeResultList.toString());
-
 
     }
 }
