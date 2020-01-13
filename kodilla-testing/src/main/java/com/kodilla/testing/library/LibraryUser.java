@@ -13,9 +13,7 @@ public class LibraryUser {
         this.peselId = peselId;
     }
 
-    public String getFirstname() {
-        return firstname;
-    }
+    public String getFirstname() { return firstname; }
 
     public String getPeselId() {
         return peselId;
