@@ -3,9 +3,15 @@ import com.kodilla.stream.book.Book;
 import com.kodilla.stream.book.BookDirectory;
 import com.kodilla.stream.forumUser.Forum;
 import com.kodilla.stream.forumUser.ForumUser;
+
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Period;
 import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import static java.time.LocalDate.*;
 
 
 public class StreamMain {
@@ -64,14 +70,15 @@ public class StreamMain {
         // .collect(Collectors.joining(",\n", "<<", ">>"));
 
 //System.out.println(theResultStringOfBooks);
-
-     Forum forum = new Forum();
-     Map<Integer, ForumUser> mapOfForumUsers = forum.getTheUserList().stream()
+//
+        Forum forum = new Forum();
+        Map<Integer, ForumUser> mapOfForumUsers = forum.getTheUserList().stream()
                 .filter(forumUser -> forumUser.getSex()=='M')
+                .filter(forumUser -> Period.between(forumUser.getBirthdayDate(),LocalDate.now()).getYears()>=20)
                 .filter(forumUser -> forumUser.getPostsNumber()>=1)
                 .collect(Collectors.toMap(ForumUser::getNumberOfUser, forumUser -> forumUser));
 
-     mapOfForumUsers.entrySet().stream()
+        mapOfForumUsers.entrySet().stream()
                 .map(entry -> entry.getKey() + ": "+ entry.getValue())
                 .forEach(System.out::println);
 
