@@ -74,21 +74,20 @@ public class RpsRunner {
                 playerPoints++;
 
             } else if (player == 2 && computer == 0) {
-                    System.out.println(userName + " choose Scissors");
-                    System.out.println("Computer choose Rock \n Computer won!!");
-                    computerPoints++;
+                System.out.println(userName + " choose Scissors");
+                System.out.println("Computer choose Rock \n Computer won!!");
+                computerPoints++;
 
             }
-           
+
             if (computerPoints == counter) {
-                    System.out.println("Computer won!! - TRY AGAIN");
+                System.out.println("Computer won!! - TRY AGAIN");
             } else if (playerPoints == counter) {
-                    System.out.println("CONGRATULATIONS ****" + userName + " **** YOU ARE THE WINNER!");
-                }
-            System.out.println("Computer points: " + computerPoints + " Player points: " + playerPoints);
+                System.out.println("CONGRATULATIONS ****" + userName + " **** YOU ARE THE WINNER!");
             }
-         
+            System.out.println("Computer points: " + computerPoints + " Player points: " + playerPoints);
         }
-    }
 
+    }
+}
 
