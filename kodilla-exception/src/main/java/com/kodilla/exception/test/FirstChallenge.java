@@ -18,8 +18,7 @@ public class FirstChallenge {
 
         double result = 0;
 
-        try { result = firstChallenge.divide(3, 0
-        );
+        try { result = firstChallenge.divide(3, 0);
 
         } catch (ArithmeticException e ){
 
