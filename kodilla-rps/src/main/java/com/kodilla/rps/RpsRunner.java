@@ -7,9 +7,6 @@ import java.util.Scanner;
 public class RpsRunner {
     public static void main(String[] args) {
 
-        int Rock = 0;
-        int Paper = 1;
-        int Scissors = 2;
         int player;
         int computer;
         int playerPoints = 0;
