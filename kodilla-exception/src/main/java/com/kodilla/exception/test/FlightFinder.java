@@ -13,10 +13,12 @@ public class FlightFinder {
         arrivalAirports.put("BERLIN", true);
 
 
-        //if (arrivalAirports.containsKey(flight)) {
+        if (arrivalAirports != null) {
             return arrivalAirports;
-        //} else {
-            //throw new RouteNotFoundException("Airport does not exist!");
+        } else {
+            throw new RouteNotFoundException("Airport does not exist!");
         }
-    }
+   }
+
+}
 
