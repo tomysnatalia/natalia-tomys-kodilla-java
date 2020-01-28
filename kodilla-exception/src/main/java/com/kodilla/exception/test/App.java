@@ -12,22 +12,22 @@ public class App {
         FlightFinder flightFinder = new FlightFinder();
 
         try {
-            Map<String, Boolean> isFlightToL = flightFinder.findFlight(flight1);
-            System.out.println("Flight to London is available from this airport " + isFlightToL);
+            flightFinder.findFlight(flight1);
+            System.out.println("Flight to London is available from this airport " );
         } catch (RouteNotFoundException e) {
             System.out.println("Please input correct airport name.");
         }
 
         try {
-            Map<String, Boolean> isFlightToR = flightFinder.findFlight(flight2);
-            System.out.println("Flight to Roma is available from this airport" + isFlightToR);
+            flightFinder.findFlight(flight2);
+            System.out.println("Flight to Roma is available from this airport" );
         } catch (RouteNotFoundException e) {
             System.out.println("Please input correct airport name.");
         }
 
         try {
-            Map<String, Boolean> isFlightToB = flightFinder.findFlight(flight3);
-            System.out.println("Flight to Berlin is available from this airport" + isFlightToB);
+           flightFinder.findFlight(flight3);
+            System.out.println("Flight to Berlin is available from this airport");
         } catch (RouteNotFoundException e) {
             System.out.println("Please input correct airport name.");
         }

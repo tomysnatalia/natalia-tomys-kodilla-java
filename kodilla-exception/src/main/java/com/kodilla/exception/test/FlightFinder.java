@@ -6,19 +6,23 @@ import java.util.Map;
 public class FlightFinder {
 
 
-   public  Map<String, Boolean> findFlight(Flight flight) throws RouteNotFoundException {
-        Map<String, Boolean> arrivalAirports = new HashMap<>();
-        arrivalAirports.put("LONDON", true);
-        arrivalAirports.put("ROMA", true);
-        arrivalAirports.put("BERLIN", true);
-
-
-        if (arrivalAirports != null) {
-            return arrivalAirports;
-        } else {
-            throw new RouteNotFoundException("Airport does not exist!");
-        }
+   public boolean findFlight (Flight flight) throws RouteNotFoundException {
+       if (airportsMap() == flight) {
+           return airportsMap().get(flight);
+       } else {
+           throw new RouteNotFoundException( "Airport does not exist!");
+       }
    }
 
+
+   private Map<String, Boolean> airportsMap () {
+       Map<String, Boolean> arrivalAirports = new HashMap<>();
+       arrivalAirports.put("LONDON", true);
+       arrivalAirports.put("ROMA", true);
+       arrivalAirports.put("BERLIN", true);
+
+       return arrivalAirports;
+
+   }
 }
 
