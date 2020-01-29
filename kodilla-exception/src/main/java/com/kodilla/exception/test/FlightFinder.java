@@ -7,8 +7,12 @@ public class FlightFinder {
 
 
    public boolean findFlight (Flight flight) throws RouteNotFoundException {
-       if (airportsMap() == flight) {
-           return airportsMap().get(flight);
+       return findAirport(flight.getArrivalAirport());
+   }
+
+   private boolean findAirport (String airportName) throws RouteNotFoundException {
+       if (airportsMap().containsKey(airportName)) {
+           return airportsMap().get(airportName);
        } else {
            throw new RouteNotFoundException( "Airport does not exist!");
        }
