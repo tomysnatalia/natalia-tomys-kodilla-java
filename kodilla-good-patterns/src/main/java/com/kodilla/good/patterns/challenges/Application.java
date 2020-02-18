@@ -17,10 +17,5 @@ public class Application {
                 .collect(Collectors.joining(" ! "));
         System.out.println(allMovies);
 
-
-
-
-
-
     }
 }
