@@ -5,9 +5,8 @@ import java.util.Map;
 import java.util.Optional;
 
 public class ExtraFoodShop implements FoodProducer {
-
-
     private Map<Product, Integer> productsList;
+
 
     public ExtraFoodShop() {
         productsList = getProductsList();
@@ -40,7 +39,7 @@ public class ExtraFoodShop implements FoodProducer {
     @Override
 
     public boolean process(Customer customer, Map<Product, Integer> productsOrders) {
-        return (isOrdered(productsOrders));
+        return isOrdered(productsOrders);
     }
     public boolean isOrdered (Map<Product, Integer> productsOrders) {
         for (Map.Entry<Product, Integer> entry : productsOrders.entrySet()) {
@@ -50,6 +49,7 @@ public class ExtraFoodShop implements FoodProducer {
                 return false;
             }
         }
+
         return true;
     }
 }

@@ -8,7 +8,7 @@ public class OrderService {
 
         orderRequest.stream()
                 .map(n -> {
-                    System.out.println("Hi!\n"+ n.getCustomer().getCustomerName() + " we're processing your order " + "from: " + n.getOrderDate());
+                    System.out.println("Hi!\n" + n.getCustomer().getCustomerName() + " we're processing your order " + "from: " + n.getOrderDate());
                     return n.getFoodProducer().process(n.getCustomer(), n.getProductsOrdersRequest());
                 })
                 .forEach(o -> System.out.println("The order has been sent: " + o));
