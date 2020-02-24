@@ -6,8 +6,5 @@ public class Application {
         OrderService orderService = new OrderService();
         orderService.processOrders(new OrderRequestRetriever().retrieve());
 
-
-
-
     }
 }
