@@ -31,7 +31,8 @@ dependencies {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-enige'
     }
     testCompile('junit:junit:4.12')
-test {
+    implementation 'junit:junit:4.12'
+    test {
     useJUnitPlatform()
 }
 }
