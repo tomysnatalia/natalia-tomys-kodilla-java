@@ -12,26 +12,32 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 
 public class BoardTestSuite {
-    @Test
 
-    public void testTaskAdd(){
+    @Test
+    public void testTaskAdd() {
         //Given
         ApplicationContext context =
                 new AnnotationConfigApplicationContext("com.kodilla.spring");
         Board board = context.getBean(Board.class);
 
+
         //When
         String taskToDoList = "to do";
         String taskInProgressList = "in progress";
         String taskDoneList = "done";
+        String showTaskList = "list of tasks";
+
 
         board.getToDoList().addTask(taskToDoList);
         board.getInProgressList().addTask(taskInProgressList);
         board.getDoneList().addTask(taskDoneList);
+        board.getTasks().addTask(showTaskList);
 
         //Then
         Assert.assertEquals("to do", board.getToDoList().getTasks().get(0));
         Assert.assertEquals("in progress", board.getInProgressList().getTasks().get(0));
         Assert.assertEquals("done", board.getDoneList().getTasks().get(0));
+        Assert.assertEquals("list of tasks", board.getTasks().getTasks().get(0));
+
     }
 }
