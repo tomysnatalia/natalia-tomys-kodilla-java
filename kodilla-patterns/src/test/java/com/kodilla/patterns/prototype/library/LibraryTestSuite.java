@@ -27,7 +27,7 @@ public class LibraryTestSuite {
             clonedLibrary = library.shallowCopy();
             clonedLibrary.setName("Home Library - shallow copy");
         } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+            System.out.println(e);
         }
 
         //deep copy
@@ -36,7 +36,7 @@ public class LibraryTestSuite {
             deepClonedLibrary = library.deepCopy();
             clonedLibrary.setName("Home Library - deep copy");
         } catch (CloneNotSupportedException e) {
-            e.printStackTrace();
+            System.out.println(e);
 
         }
         //When
