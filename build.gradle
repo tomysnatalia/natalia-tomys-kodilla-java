@@ -11,28 +11,10 @@ buildscript {
 }
 
 
-apply plugin: $/java/$
-apply plugin: 'idea'
-apply plugin: 'org.springframework.boot'
-apply plugin: 'io.spring.dependency-management'
+apply plugin: 'java'
 
-group = 'com.kodilla'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web')
 
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-enige'
-    }
-    testCompile('junit:junit:4.12')
-    implementation 'junit:junit:4.12'
-    test {
-    useJUnitPlatform()
 }
-}
+
