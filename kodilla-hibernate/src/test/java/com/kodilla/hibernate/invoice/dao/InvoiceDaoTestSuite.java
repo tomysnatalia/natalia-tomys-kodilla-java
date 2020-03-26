@@ -23,10 +23,11 @@ public class InvoiceDaoTestSuite {
     @Autowired
     InvoiceDao invoiceDao;
 
+
     @Test
     public void testInvoiceDaoSave () {
         //Given
-        Invoice invoice = new Invoice ("05/03/2020");
+        Invoice invoices = new Invoice ("05/03/2020");
 
         Product coffeeIlly = new Product ("Coffee illy");
         Product coffeeLavazza = new Product("Coffee Lavazza");
@@ -34,24 +35,28 @@ public class InvoiceDaoTestSuite {
         Item illy = new Item(coffeeIlly, new BigDecimal(45), 2, new BigDecimal(1));
         Item lavazza = new Item(coffeeLavazza, new BigDecimal(39), 1, new BigDecimal(1));
 
-        illy.setInvoice(invoice);
-        lavazza.setInvoice(invoice);
+        coffeeIlly.getItems().add(illy);
+        coffeeLavazza.getItems().add(lavazza);
+
+        illy.setInvoice(invoices);
+        lavazza.setInvoice(invoices);
 
         List<Item> items = new ArrayList<>();
         items.add(illy);
         items.add(lavazza);
 
-        invoice.setItems(items);
+        invoices.setItems(items);
 
         //When
-        invoiceDao.save(invoice);
-        int invoiceId = invoice.getId();
-        int itemSize = invoice.getItems().size();
+        invoiceDao.save(invoices);
 
-        Invoice checkInvoices = invoiceDao.findById(invoiceId);
+        int id = invoices.getId();
+        int itemSize = invoices.getItems().size();
+
+        Invoice checkInvoices = invoiceDao.findById(id);
 
         //Then
-        Assert.assertEquals(invoiceId, checkInvoices.getId());
+        Assert.assertEquals(id, checkInvoices.getId());
         Assert.assertEquals(2, itemSize);
         Assert.assertEquals(itemSize, checkInvoices.getItems().size());
 
