@@ -17,8 +17,7 @@ public class Item {
     public Item() {
     }
 
-    public Item (Product product, BigDecimal price, int quantity, BigDecimal value) {
-        this.product = product;
+    public Item (BigDecimal price, int quantity, BigDecimal value) {
         this.price = price;
         this.quantity = quantity;
         this.value = value;
@@ -47,6 +46,12 @@ public class Item {
         return value;
     }
 
+    @ManyToOne
+    @JoinColumn(name = "PRODUCT_ID")
+    public Product getProduct () {
+        return product;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -71,12 +76,6 @@ public class Item {
     @JoinColumn(name = "INVOICE_ID")
     public Invoice getInvoice () {
         return invoice;
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "PRODUCT_ID")
-    public Product getProduct() {
-        return product;
     }
 
     public void setInvoice(Invoice invoice) {

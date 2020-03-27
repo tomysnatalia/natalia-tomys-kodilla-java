@@ -31,11 +31,11 @@ public class InvoiceDaoTestSuite {
         Product coffeeIlly = new Product ("Coffee illy");
         Product coffeeLavazza = new Product("Coffee Lavazza");
 
-        Item illy = new Item(coffeeIlly, new BigDecimal(45), 2, new BigDecimal(1));
-        Item lavazza = new Item(coffeeLavazza, new BigDecimal(39), 1, new BigDecimal(1));
+        Item illy = new Item(new BigDecimal(45), 2, new BigDecimal(1));
+        Item lavazza = new Item(new BigDecimal(39), 1, new BigDecimal(1));
 
-        coffeeIlly.getItems().add(illy);
-        coffeeLavazza.getItems().add(lavazza);
+        illy.setProduct(coffeeIlly);
+        lavazza.setProduct(coffeeLavazza);
 
         illy.setInvoice(invoices);
         lavazza.setInvoice(invoices);
@@ -48,7 +48,6 @@ public class InvoiceDaoTestSuite {
 
         //When
         invoiceDao.save(invoices);
-
         int id = invoices.getId();
         int itemSize = invoices.getItems().size();
 
