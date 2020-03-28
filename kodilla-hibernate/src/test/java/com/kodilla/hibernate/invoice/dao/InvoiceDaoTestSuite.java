@@ -10,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +19,7 @@ import java.util.List;
 public class InvoiceDaoTestSuite {
 
     @Autowired
-    InvoiceDao invoiceDao;
+    private InvoiceDao invoiceDao;
 
 
     @Test
@@ -34,11 +33,12 @@ public class InvoiceDaoTestSuite {
         Item illy = new Item(new BigDecimal(45), 2, new BigDecimal(1));
         Item lavazza = new Item(new BigDecimal(39), 1, new BigDecimal(1));
 
-        illy.setProduct(coffeeIlly);
-        lavazza.setProduct(coffeeLavazza);
 
         illy.setInvoice(invoices);
         lavazza.setInvoice(invoices);
+
+        illy.setProduct(coffeeIlly);
+        lavazza.setProduct(coffeeLavazza);
 
         List<Item> items = new ArrayList<>();
         items.add(illy);
@@ -51,6 +51,7 @@ public class InvoiceDaoTestSuite {
         int id = invoices.getId();
         int itemSize = invoices.getItems().size();
 
+
         Invoice checkInvoices = invoiceDao.findById(id);
 
         //Then
@@ -59,7 +60,7 @@ public class InvoiceDaoTestSuite {
         Assert.assertEquals(itemSize, checkInvoices.getItems().size());
 
         //CleanUp
-        //
+        invoiceDao.deleteById(id);
     }
 }
 
