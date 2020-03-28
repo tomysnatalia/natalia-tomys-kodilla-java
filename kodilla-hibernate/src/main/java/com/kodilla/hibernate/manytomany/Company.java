@@ -5,10 +5,8 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
-        name = "Company.retrieveCompanyNameLike",
-        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :NAME , '%')"
-)
+@NamedNativeQuery(name = "Company.retrieveCompanyNameLike",
+        query = "SELECT * FROM COMPANIES WHERE COMPANY_NAME LIKE CONCAT('%', :NAME , '%')")
 
 @Entity
 @Table(name = "COMPANIES")
@@ -38,13 +36,9 @@ public class Company {
         return name;
     }
 
-    @ManyToMany (cascade = CascadeType.ALL, mappedBy = "companies")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
-    }
-
-    public void setEmployees (List<Employee> employees) {
-        this.employees = employees;
     }
 
     private void setId(int id) {
@@ -53,5 +47,9 @@ public class Company {
 
     private void setName(String name) {
         this.name = name;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }
