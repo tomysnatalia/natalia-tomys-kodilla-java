@@ -35,13 +35,12 @@ public class TaskListDaoTestSuite {
         List<TaskList> checkTaskLists = taskListDao.findByListName(LISTNAME);
 
         //Then
-        Assert.assertEquals(1,checkTaskLists.size());
+        Assert.assertEquals(2, checkTaskLists.size());
         Assert.assertEquals(LISTNAME, checkTaskLists.get(0).getListName());
 
         //CleanUP
         taskListDao.delete(taskList1);
     }
-
     @Test
     public void testTaskListDaoSaveWithTasks() {
         //Given
@@ -65,9 +64,8 @@ public class TaskListDaoTestSuite {
         Assert.assertNotEquals(0, id);
 
         //CleanUp
-       // taskListDao.deleteById(id);
+        taskListDao.deleteById(id);
     }
-
 
     @Test
     public void testNamedQueries() {
@@ -105,19 +103,17 @@ public class TaskListDaoTestSuite {
         List<Task> longTasks = taskDao.retrieveLongTasks();
         List<Task> shortTasks = taskDao.retrieveShortTasks();
         List<Task> enoughTimeTasks = taskDao.retrieveTasksWithEnoughTime();
-        List<Task> durationLongerThanTasks = taskDao.retrieveTasksWithDurationsLongerThan(6);
 
 
         //Then
         try {
-            Assert.assertEquals(1, longTasks.size());
-            Assert.assertEquals(3, shortTasks.size());
-            Assert.assertEquals(3, enoughTimeTasks.size());
-            Assert.assertEquals(2, durationLongerThanTasks);
+            Assert.assertEquals(2, longTasks.size());
+            Assert.assertEquals(4, shortTasks.size());
+            Assert.assertEquals(4, enoughTimeTasks.size());
 
         } finally {
             //CleanUp
-            //taskListDao.deleteById(id);
+            taskListDao.deleteById(id);
         }
     }
 }

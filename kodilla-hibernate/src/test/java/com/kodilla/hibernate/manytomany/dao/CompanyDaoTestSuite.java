@@ -59,11 +59,11 @@ public class CompanyDaoTestSuite {
         //CleanUp
         //try {
         //companyDao.deleteById(softwareMachineId);
-        //companyDao.deleteById(dataMaestersId);
+        //.deleteById(dataMaestersId);
         //companyDao.deleteById(greyMatterId);
         //} catch (Exception e) {
-         //}
-     }
+        //}
+    }
 
     @Test
     public void testNamedQueries(){
@@ -94,13 +94,11 @@ public class CompanyDaoTestSuite {
         companyDao.save(greyMatter);
 
         //When
-        List<Employee> employeeWithLastnameName = employeeDao.retrieveEmployeeWithLastname("Clarckson");
-        List<Company> companyName = companyDao.retrieveCompanyNameLike("Gre");
+        List<Employee> employeeWithLastname = employeeDao.retrieveEmployeeWithLastname("Clarckson");
+        List<Company> companyNameLike = companyDao.retrieveCompanyNameLike("Sof");
 
         //Then
-        Assert.assertEquals(1, employeeWithLastnameName.size());
-        Assert.assertEquals(1, companyName.size());
+        Assert.assertEquals(1, employeeWithLastname.size());
+        Assert.assertEquals(2, companyNameLike.size());
     }
 }
-
-

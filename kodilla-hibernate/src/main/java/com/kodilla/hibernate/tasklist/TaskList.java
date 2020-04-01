@@ -47,7 +47,6 @@ public final class TaskList {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-
     public List<Task> getTasks() {
         return tasks;
     }
@@ -55,6 +54,7 @@ public final class TaskList {
     public void setTasks(List<Task> tasks) {
         this.tasks =tasks;
 }
+
     public void setListName(String listName) {
         this.listName = listName;
     }

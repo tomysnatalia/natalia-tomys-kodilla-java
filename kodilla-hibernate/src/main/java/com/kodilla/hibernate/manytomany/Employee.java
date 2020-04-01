@@ -10,7 +10,7 @@ import java.util.List;
 
 @NamedQuery(
         name = "Employee.retrieveEmployeeWithLastname",
-        query = "FROM Employee WHERE lastname =:LASTNAME"
+        query = "FROM Employee WHERE lastname =: LASTNAME"
 )
 
 

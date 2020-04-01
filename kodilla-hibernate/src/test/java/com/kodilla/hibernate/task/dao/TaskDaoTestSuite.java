@@ -10,7 +10,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
-import java.util.List;
 import java.util.Optional;
 
 @RunWith(SpringRunner.class)
@@ -38,24 +37,6 @@ public class TaskDaoTestSuite {
     }
 
     @Test
-    public void testTaskDaoFindByDuration() {
-        //Given
-        Task task = new Task(DESCRIPTION, 7);
-        taskDao.save(task);
-        int duration = task.getDuration();
-
-        //When
-        List<Task> readTasks = taskDao.findByDuration(duration);
-
-        //Then
-        Assert.assertEquals(1, readTasks.size());
-
-        //CleanUp
-        //int id = readTasks.get(0).getId();
-       // taskDao.deleteById(id);
-    }
-
-    @Test
     public void testTaskDaoSaveWithFinancialDetails() {
         //Given
         Task task = new Task(DESCRIPTION, 30);
@@ -71,7 +52,4 @@ public class TaskDaoTestSuite {
         //CleanUp
         //taskDao.deleteById(id);
     }
-
-
-
-}
+ }
