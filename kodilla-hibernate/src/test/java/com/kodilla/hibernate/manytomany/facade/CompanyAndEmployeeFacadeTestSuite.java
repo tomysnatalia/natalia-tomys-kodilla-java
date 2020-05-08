@@ -106,6 +106,7 @@ public class CompanyAndEmployeeFacadeTestSuite {
         resultCompanyList.add(softwareMachine);
         resultCompanyList.add(dataMasters);
 
+
         resultEmployeeList.add(johnSmith);
         resultEmployeeList.add(emmaSmith);
         //When
