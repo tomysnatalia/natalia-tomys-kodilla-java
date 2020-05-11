@@ -22,7 +22,7 @@ public class FacadeWatcher {
 
     @Before("execution(* com.kodilla.patterns2.facade.api.OrderFacade.processOrder(..))" + "&& args (order, userId) && target(object)")
     public void logEventTwo(OrderDto order, Long userId, Object object) {
-        LOGGER.info("Class: " + object.getClass().getName() + ", Args: " + "OrderDto: " + order + ", from user: " +  userId);
+        LOGGER.info("Class: " + object.getClass().getName() + ", Args: OrderDto: " + order + ", from user: " +  userId);
     }
 
 }
