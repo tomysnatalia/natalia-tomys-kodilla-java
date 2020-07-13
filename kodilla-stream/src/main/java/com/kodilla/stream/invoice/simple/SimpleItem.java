@@ -12,9 +12,11 @@ public class SimpleItem {
     public SimpleProduct getProduct() {
         return product;
     }
+
     public double getQuantity() {
         return quantity;
     }
+
     public double getValue() {
         return product.getProductPrice() * quantity;
     }
